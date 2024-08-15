@@ -142,13 +142,13 @@
           <div class="row gy-4">
 
             <div class="col-md-6">
-              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required autocomplete="off">
-              <div class="error-txt">Your name can't be blank</div>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required autocomplete="off" onkeyup="validateUsername(this)">
+              <div id="nam"></div>
             </div>
 
             <div class="col-md-6 ">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required autocomplete="off">
-              <div class="error-txt">Email address can't be blank</div>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required autocomplete="off" onkeyup="validateEmail(this)">
+              <div id="mail"></div>
             </div>
             <div class="col-md-6 ">
               <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required autocomplete="off" onkeyup="val(this)">
