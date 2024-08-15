@@ -4,6 +4,26 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const mess = document.getElementById("message");
+document.getElementById("res").style.color = "red";
+
+function val(elem){
+  if(isNaN(elem.value)){
+    document.getElementById('phone').style.borderColor = "red";
+    document.getElementById('res').innerText = "Please enter numbers only";
+    
+  }else{
+    document.getElementById('res').innerText = "";
+    document.getElementById('phone').style.borderColor = "";
+      
+    if(elem.value.length > 10){
+      document.getElementById('res').innerText = "Please enter 10 digits only";
+      document.getElementById('phone').style.borderColor = "red";
+    }else{
+      document.getElementById('res').innerText = "";
+      document.getElementById('phone').style.borderColor = "";
+    }
+  }
+}
 
 function sendEmail(){
 
