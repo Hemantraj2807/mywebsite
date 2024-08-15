@@ -5,6 +5,50 @@ const phone = document.getElementById("phone");
 const subject = document.getElementById("subject");
 const mess = document.getElementById("message");
 document.getElementById("res").style.color = "red";
+document.getElementById("nam").style.color = "red";
+document.getElementById("mail").style.color = "red";
+
+function validateUsername(element){
+  if(!isNaN(element.value)){
+    if (element.value === "") {
+      document.getElementById('nam').innerText = "Please enter your Name";
+    } else {
+      document.getElementById('name').style.borderColor = "red";
+      document.getElementById('nam').innerText = "Enter a valid Name";
+    }
+    
+  }else{
+    if (element.value.length < 3) {
+      document.getElementById('name').style.borderColor = "red";
+      document.getElementById('nam').innerText = "Name is too short";
+    } else if(element.value.length > 15){
+      document.getElementById('name').style.borderColor = "red";
+      document.getElementById('nam').innerText = "Enter a Short Name";
+    }else {
+      document.getElementById('nam').innerText = "";
+      document.getElementById('name').style.borderColor = "";
+    }
+    
+  }
+
+}
+
+function validateEmail(element) {
+  var email = element.value;
+  if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+    if (email === "") {
+      document.getElementById('email').style.borderColor = "red";
+      document.getElementById('mail').innerText = "Please enter your Email";
+    } else {
+      document.getElementById('email').style.borderColor = "red";
+      document.getElementById('mail').innerText = "Invalid email address";
+    }
+    
+  }else{
+    document.getElementById('email').style.borderColor = "";
+    document.getElementById('mail').innerText = "";
+  }
+}
 
 function val(elem){
   if(isNaN(elem.value)){
@@ -21,6 +65,16 @@ function val(elem){
     }else{
       document.getElementById('res').innerText = "";
       document.getElementById('phone').style.borderColor = "";
+      if(elem.value.length > 10){
+      document.getElementById('res').innerText = "Please enter 10 digits only";
+      document.getElementById('phone').style.borderColor = "red";
+    }else if (elem.value.length < 10) {
+      document.getElementById('res').innerText = "Enter a valid number";
+      document.getElementById('phone').style.borderColor = "red";
+    }else{
+      document.getElementById('res').innerText = "";
+      document.getElementById('phone').style.borderColor = "";
+    }
     }
   }
 }
