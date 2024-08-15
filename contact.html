@@ -26,14 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Aug 01 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="contact-page">
@@ -159,8 +151,8 @@
               <div class="error-txt">Email address can't be blank</div>
             </div>
             <div class="col-md-6 ">
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required autocomplete="off">
-              <div class="error-txt">Phone Number can't be blank</div>
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required autocomplete="off" onkeyup="val(this)">
+              <div id="res"></div>
             </div>
 
             <div class="col-md-6">
